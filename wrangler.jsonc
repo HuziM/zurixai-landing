@@ -1,0 +1,17 @@
+{
+  "name": "zurixai",
+  "compatibility_date": "2026-09-18",
+  "assets": {
+    "directory": "out"
+  },
+  "routes": [
+    {
+      "pattern": "zurixai.com",
+      "zone_name": "zurixai.com",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

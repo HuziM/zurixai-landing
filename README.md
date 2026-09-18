@@ -21,14 +21,17 @@ npm run build      # static export → out/
 
 ## Deploy
 
-Cloudflare Pages (project: `zurixai`):
+Cloudflare Workers static assets (project: `zurixai`):
 
-- **Production branch:** `main` — pushes deploy automatically
-- **Build command:** `npm run build`
-- **Build output:** `out`
-- **Custom domain:** `zurixai.com` (already on Cloudflare)
+```bash
+npm run build
+npx wrangler login      # one-time OAuth
+npx wrangler deploy     # reads wrangler.jsonc
+```
 
-PRs and non-production branches get automatic preview URLs.
+- Serves the built `out/` directory as static assets from `zurixai.com` (custom domain on the `zurixai.com` zone).
+- `wrangler.jsonc` wires the static assets + custom-domain route; deploys are reproducible and don't depend on any dashboard state.
+- Deploy requires the `npx wrangler login` OAuth token in place.
 
 ## Content
 
